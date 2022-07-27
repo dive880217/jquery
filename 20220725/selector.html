@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <style>
+    /* button{
+        background: red;
+    }
+    .button{
+        background: yellow;
+    }
+    #button{
+        background: rgb(27, 117, 32);
+    } */
+  </style>
+  <body>
+      <div class="container">
+        <button>button</button> 
+        <button class="button" >button</button>
+        <button class="button" id="button">button</button>
+        <button class="button" id="button">button</button>
+        <div class="py-2">
+            <div class="box1">1</div>
+            <div class="box2">2</div>
+        </div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script>
+       //純js的寫法  document.querySelector("button").style.color="red"
+       //jquery寫法 以下
+       //先選取標籤 選擇css改的樣式 (樣式,參數)
+        // $("button").css("background","blue").css("color","red")
+        // $(".button").css("background","yellow").css("color","green")
+       
+        //  $(".button").css("background","yellow").css("color","green")
+        //   $("button").css("background","blue").css("color","red")
+      
+         $("button").css("background","red")
+         $(".button").css("background","yellow")
+         $("#button").css("background","green")
+         $(".box1",".box2").css("background","pink")
+       
+        
+   </script>
+</body>
+</html>

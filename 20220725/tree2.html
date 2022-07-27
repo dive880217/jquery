@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="stop"></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td class="stop"></td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        $("td").click(function () {
+            //點選的區塊 會讓隔壁區塊顯示顏色
+            // $(this).next().css("background", 'red')
+            //同理 但是是直接隔壁區塊所有都顯示顏色
+            // $(this).nextAll().css("background", 'red')
+            //.nextUntil()可以自己設終結點
+            //  $(this).nextUntil(".stop").css("background", 'red')
+            //點選的前面會顯示
+            // $(this).prev().css("background", 'blue')
+            //全部顯是點選的前面
+            // $(this).prevAll().css("background", 'blue')
+
+            // $(this).css("background", 'yellow')
+            // $(this).next().css("background", 'red')
+            // $(this).prev().css("background", 'blue')
+
+            //上面語法的綜合寫法
+            //記得prev要兩次 不然原先yellow會被吃掉
+            // $(this).css("background", 'yellow')
+            //     .next().css("background", 'red') //沒有目標就不會執行這邊跟後面 詳細直接點最後一格 只會顯示yellow
+            //     .prev().prev().css("background", 'blue')
+
+            //end會回到.next之前的狀態
+            // $(this).css("background", 'yellow')
+            //     .next().css("background", 'red') 
+            //     .end().prev().css("background", 'blue')
+
+            // $(this).css("background", 'yellow')
+            // .siblings().css("background", 'lightblue')
+            //與上面相同 用end的方式回到原本的狀態
+            $(this).siblings().css("background", "red")
+                .end().css("background", "yellow")
+        })
+    </script>
+</body>
+
+</html>

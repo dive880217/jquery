@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Tree Travelsal</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .td {
+            transition:0.5s;
+        }
+
+        .box {
+            --box-width: 32px;
+            width: var(--box-width);
+            height: var(--box-width);
+            background: pink;
+            margin: 5px;
+            display: inline-block;
+            transition: .6s;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <table class="table table-bordered">
+            <tr>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td></td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+            </tr>
+            <tr>
+                <td></td>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td></td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>
+                    <div class="box"></div>
+                    <div class="box"></div>
+                </td>
+                <td></td>
+                <td>
+                    <div>
+                        <div class="box"></div>
+                        <div class="box"></div>
+                    </div>
+                </td>
+                <td></td>
+            </tr>
+        </table>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        //js-> elem.children[i] ->還會因為空白影響到
+        // $("td").children(".box").css("background", "red")
+        //相同 上下
+        // $("td .box").css("background", "red")
+
+        // elem.children[i]
+        // $("td").children(".box").css("background", "red");
+        // $("td .box").css("background", "red");
+
+        $("td").click(function () {
+            // console.log("click")
+            // $(".box").css("background", "red")
+            // $(this).css("background", "lightblue");
+            // $(this).children(".box").css("background", "red");
+
+            // $(this).find(".box").css("background", "red").css("border-radius", "50%");
+
+            // $(this).find('.box').css(
+            //     {
+            //         "background":"red",
+            //         "border-radius":"50%"
+            //     }
+            // );
+        })
+        $(".box").click(function () {
+            //     //parent 往上找一層 點box 會讓外層元素呈現這邊的樣式
+            //     $(this).parent().css('background', 'lightblue')
+            // 
+            // 
+            //     //parent 往上找一層 點box 會讓外層元素呈現這邊的樣式
+            //     $(this).parent().css('background', 'lightblue')
+            // 
+            //
+            //     //parents 往上找全部 所有葉面呈現相同的
+            //     $(this).parents().css('background', 'lightblue')
+            // })
+
+            //parentsUntil 往上找全部 (可放置到哪層的參數)
+            // $(this).parentsUntil("tr").css('background', 'lightblue')
+            
+            //closest 最接近的都會顯示
+            $(this).closest("tr").css('background', 'lightblue')
+
+        })
+
+
+    </script>
+</body>
+
+</html>
