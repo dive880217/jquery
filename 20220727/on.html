@@ -1,19 +1,65 @@
 <!doctype html>
 <html lang="en">
-  <head>
+
+<head>
     <title>Title</title>
     <!-- Required meta tags -->
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
     <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-  </head>
-  <body>
-      
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+</head>
+
+<body>
+    <div class="container">
+        <button id="button" class="btn btn-info button">
+            on
+        </button>
+        <div class="py-2">
+            <input type="text" id="input">
+        </div>
+    </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-  
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        // $("#button").on("click", function () {
+        //     console.log("click")
+        // })
+        // $("#button").on("mouseenter", function () {
+        //     console.log("mouse enter")
+        // })
+        // $("#button").on("mouseleave", function () {
+        //     console.log("mouse leave")
+        // })
+
+        //on 的方式可以綁定多個事件發生 很像物件的感覺
+        $("#button").on({
+            "click": function () {
+                console.log("click")
+            },
+            "dblclick": function () {
+                console.log("db click")
+            },
+            "mouseenter": function () {
+                console.log("mouse enter")
+            },
+            "mouseleave": function () {
+                console.log("mouse leave")
+            },
+
+        })
+        $("#input").on("change keyup", function (){
+            // console.log("change")
+            //elem.value 原生js 取直的方式 詳系查往
+            let content=$(this).val(); //jq 取直
+            console.log(content)
+        })
+    </script>
 </body>
+
 </html>
