@@ -15,6 +15,7 @@
             width: 120px;
             height: 120px;
             background: pink;
+            transition: .4s;
         }
     </style>
 </head>
@@ -23,8 +24,12 @@
     <div class="container">
         <div class="py-2">
             <button class="btn btn-info" id="getCss">getCss</button>
+            <button class="btn btn-info" id="setCss">setCss</button>
+            <button class="btn btn-info" id="toggleCss">toggleCss</button>
+            <button class="btn btn-info" id="extend">extend</button>
         </div>
         <div class="box" id="box"></div>
+        
     </div>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
@@ -40,7 +45,25 @@
             let boxWidth = $("#box").css("width");
             let boxHeight = $("#box").css("height")
             console.log(boxWidth, boxHeight)
-            console.log($("#box").width(),$("#box").height())
+            console.log($("#box").width(), $("#box").height())
+        })
+
+        $("#setCss").click(function () {
+            $("#box").css("background", "red")
+            $("#box").css("border-radius", "30px")
+        })
+        $("#toggleCss").click(function () {
+            let backgroundColor = $("#box").css("background-color");
+            console.log(backgroundColor)
+            if (backgroundColor == "rgb(255, 192, 203)") {
+                $("#box").css("background", "red")
+            } else {
+                $("#box").css("background", "pink")
+            }
+        })
+        $("#extend").click(function(){
+            $("#box").css("width","+=10px")
+              console.log(extend)
         })
     </script>
 </body>

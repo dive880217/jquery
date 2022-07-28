@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Class</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .box {
+            height: 120px;
+            width: 120px;
+            background: pink;
+        }
+
+        .box.active {
+            background: red;
+            border-radius: 50%;
+            transition: .5s;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- .container>button.btn.btn-info -->
+    <div class="container">
+        <div class="py-2">
+            <button class="btn btn-info" id="addClass">
+                add class
+            </button>
+            <button class="btn btn-info" id="removeClass">
+                remove class
+            </button>
+            <button class="btn btn-info" id="toggleClass">
+                toggle class
+            </button>
+        </div>
+        <div class="box" id="box"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+    <script>
+        $("#addClass").click(function () {
+            //classList.add() 純js 寫法
+            $("#box").addClass("active")
+        })
+        $("#removeClass").click(function () {
+            //classList.add() 純js 寫法
+            $("#box").addClass("active")
+        })
+        $("#toggleClass").click(function () {
+            //classList.add() 純js 寫法
+            $("#box").addClass("active")
+
+        })
+        $("#box").click(function () {
+            let ifActive = $("#box").hasClass("active")
+            if (ifActive) { alert("active!!") }
+        })
+    </script>
+</body>
+
+</html>

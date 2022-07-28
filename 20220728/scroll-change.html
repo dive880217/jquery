@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Scroll change</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        body {
+            height: 300vh;
+        }
+
+        .img1 {
+            width: 200px;
+            position: absolute;
+            top: 800px;
+            transition: .5s;
+            left: -200px;
+        }
+        .img1.active{
+            left:0;
+        }
+    </style>
+</head>
+
+<body>
+    <img class="img1" src="/images/25.png" alt="">
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+   <script>
+      $(window).scroll(function(){
+        let scrollTop=$(this).scrollTop()
+        if(scrollTop>=400){
+            $(".img1").addClass("active")
+
+        }else{
+            $("img1").removeClass(".active")
+        }
+      })
+   </script>
+</body>
+
+</html>
