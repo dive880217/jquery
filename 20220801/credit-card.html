@@ -15,7 +15,7 @@
     <body>
         <div class="container">
             <div class="row justify-content-center">
-                <div class="col-6">
+                <div class="col-8 col-lg-6">
                     <div class="card mt-3 p-2">
                         <div class="form-row form-group">
                             <label for="" class="col-sm-2 col-form-label">卡號</label>
@@ -63,11 +63,28 @@
             integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM"
             crossorigin="anonymous"></script>
         <script>
-        //   $(".card-input").focus(function(){
-        //     console.log("focus")
-        //   })
-        //  下午去預想要怎麼增加使用者體驗 輸入四碼 會自動跳到隔壁行
-          $(".card-input").eq(0).focus()
+            // $(".card-input").focus(function(){
+            //     console.log("focus")
+            // })
+            let focusIndex = 0;
+
+            $(".card-input").eq(focusIndex).focus();
+
+            $(".card-input").on("keyup", function () {
+                let index = $(this).index();
+                // console.log(index);
+                // return;
+                let inputContent = $(this).val();
+                // legnth;
+                let inputLength = inputContent.length;
+                // console.log(inputLength)
+                if (inputLength >= 4) {
+                    let nextInput = $(this).closest(".col").next().find(".card-input");
+                    nextInput.focus();
+                }
+
+            })
+
         </script>
     </body>
 

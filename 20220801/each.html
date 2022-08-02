@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  </head>
+  <body>
+      <div class="container">
+        <table  class="table table-bordered">
+            <tr>
+                <td>77</td>
+                <td></td>
+                <td>34</td>
+                <td></td>
+                <td>33</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>2</td>
+                <td></td>
+                <td>3</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>56</td>
+                <td>2</td>
+                <td></td>
+                <td>553</td>
+            </tr>
+            <tr>
+                <td></td>
+                <td>34</td>
+                <td></td>
+                <td>23</td>
+                <td></td>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>32</td>
+                <td>12</td>
+                <td></td>
+                <td>5</td>
+            </tr>
+        </table>
+      </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+ <script>
+    //each 加總起來的內建韓式
+    let total = 0
+  $("td").each(function(){
+    let number = Number($(this).text())
+    // console.log(number)
+    total+=number
+    
+  })
+   console.log(total)
+ </script>  
+</body>
+</html>

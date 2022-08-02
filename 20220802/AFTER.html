@@ -1,0 +1,51 @@
+<!doctype html>
+<html lang="en">
+
+    <head>
+        <title>Title</title>
+        <!-- Required meta tags -->
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+        <!-- Bootstrap CSS -->
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+            integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <style>
+            .box {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                display: inline-block;
+                background: palevioletred;
+            }
+        </style>
+    </head>
+
+    <body>
+        <div class="container">
+            <div class="py-2">
+                <button class="btn btn-info" id="after">
+                    after
+                </button>
+               <button class="btn btn-info" id="before">
+                        before
+                    </button>
+                </div>
+                <div class="box text-center" id="box">box</div>
+            </div>
+            <!-- Optional JavaScript -->
+            <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+            <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+                integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+                crossorigin="anonymous"></script>
+            <script>
+                $("#after").click(function () {
+                    $("#box").after("<div class='box'>after</div>")
+                })
+                $("#before").click(function () {
+                    $("#box").after("<div class='box'>before</div>")
+                })
+            </script>
+    </body>
+
+</html>
