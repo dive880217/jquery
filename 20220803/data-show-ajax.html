@@ -35,9 +35,10 @@
     </div><!-- container -->
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"
         integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    
+
     <script>
         //ajax, axios, fetch
+        //404 通常都是網址沒搬過去 所以找不到
         $.ajax({
             method: "GET",
             url: "taoyuan.json",
@@ -46,7 +47,26 @@
             .done(function (response) {
                 // console.log(response)
                 response.forEach((school, index) => {
-                    console.log(school)
+                    // console.log(school)
+                    $("#schoolList").append(`
+                    <div class="col-md-4 col-lg-e mb-2">
+        <div class="card p-3">
+          <h3 class="h4">${school.name}</h3>
+          <button class="btn btn-info btn-black"
+           data-lat="${school.lat}"
+           data-lng="${school.lng}">
+            取得經緯度
+          </button>
+        </div>
+      </div>`)
+      //dom binding
+                    $(".btn").click(function () {
+                        let lat = $(this).data("lat")
+                        let lng = $(this).data("lng")
+                        $("#lat").text(lat)
+                        $("#lng").text(lng)
+
+                    })
                 })
 
             }).fail(function () {
