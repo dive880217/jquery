@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Title</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        .box {
+            height: 120px;
+            width: 120px;
+            background: pink;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="py-2">
+            <button data-animate="show" class="btn btn-info">show</button>
+            <button data-animate="hide" class="btn btn-info">hide</button>
+            <button data-animate="toggle" class="btn btn-info">toggle</button>
+            <button data-animate="animate" class="btn btn-info">animate</button>
+            <button data-animate="extend" class="btn btn-info">extend</button>
+
+        </div>
+        <div id="box" class="box"></div>
+    </div>
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.2.1.min.js"
+    integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
+<script>
+        $(".btn").click(function () {
+            let animate = $(this).data("animate")
+            console.log(animate)
+
+            switch (animate) {
+                case "show":
+                    // $("#box").show()
+                    //  $("#box").fadeIn("slow")
+                    //  $("#box").fadeIn(1500,function(){
+                    //     console.log("finish")
+                    //  })
+                    $("#box").slideDown(8888,function(){
+                        console.log("finish")
+
+                    })
+                    break;
+                case "hide":
+                    //  $("#box").hide()
+                    //   $("#box").fadeOut(500)
+                    $("#box").slideUp()
+
+                    break;
+                case "toggle":
+                    //  $("#box").toggle()
+                    //   $("#box").fadeToggle()
+                    $("#box").slideToggle()
+
+                    break;
+                     case "animate":
+                   
+                    $("#box").animate({
+                        width:300,
+                        height:100 ,
+                          
+                    })
+                    
+                    break;
+                    case "extend":
+                     $("#box").animate({
+                        width: "+=50rem",
+                        console
+                        // console.log(width)
+                    })
+
+                    break;
+
+
+            }
+        })
+
+
+    </script>
+</body>
+
+</html>

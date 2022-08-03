@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>scroll top</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
+        integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <style>
+        html{
+            scroll-behavior: smooth; 
+            /* 滑動效果 */
+        }
+        .full {
+            height: 100vh;
+        }
+         .top{
+            right: 20px;
+            bottom: 20px;
+         }
+    </style>
+</head>
+
+<body>
+    <div id="section1" class="full" style="background: pink"></div>
+    <div id="section2"  class="full" style="background: yellow"></div>
+    <div id="section3" class="full" style="background: lightblue"></div>
+   
+     <div class="fixed-top">
+        <a class="btn btn-info" href="#section1">section1</a>
+        <a class="btn btn-info" href="#section2">section2</a>
+        <a class="btn btn-info" href="#section3">section3</a>
+    </div>
+    <button class="btn btn-info position-fixed top" id="top">top</button>
+          
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"
+        integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    <script>
+        $("#top").click(function (){
+            // console.log("click")
+        // $(window).scrollTop(0)
+        $("html").animate({
+            scrollTop:0
+        })
+
+        }) 
+    </script>
+</body>
+
+</html>
